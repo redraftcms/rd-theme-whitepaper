@@ -53,7 +53,7 @@ window.addEventListener("load", () => {
       if (!url) return;
       return dennis.ajax("GET", url)
       .then(response => {
-        var theme = dennise.getPreference("theme") || "light";
+        var theme = dennis.getPreference("theme") || "light";
         if (theme==="dark") {
           response = response.replace("/undark.css","/dark.css");
         }
