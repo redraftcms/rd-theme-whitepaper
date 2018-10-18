@@ -57,7 +57,7 @@ window.addEventListener("load", () => {
         if (theme==="dark") {
           response = response.replace("/undark.css","/dark.css");
         }
-        var html = document.querySelector("html");
+        var html = document.createElement("html");
         html.innerHTML = response;
         var title = document.querySelector("title");
         var titleUpdate = html.querySelector("title");
