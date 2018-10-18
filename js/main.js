@@ -51,9 +51,9 @@ window.addEventListener("load", () => {
     loadPage: (url, state) => {
       console.log("X LOADPAGE");
       if (!url) return;
-      return this.ajax("GET", url)
+      return dennis.ajax("GET", url)
       .then(response => {
-        var theme = this.getPreference("theme") || "light";
+        var theme = dennise.getPreference("theme") || "light";
         if (theme==="dark") {
           response = response.replace("/undark.css","/dark.css");
         }
