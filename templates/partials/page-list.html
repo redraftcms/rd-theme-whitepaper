@@ -1,0 +1,12 @@
+<ul>
+{% for item in items %}
+  <li> 
+    <article>
+      <a href="{{item.url}}" title="{{item.title}}{% if item.subtitle %}: {{item.subtitle}}{% endif %}">{{item.title}}</a>{% if item.subtitle %}—{{item.subtitle}}{% endif %}
+      {% if item.summary %}
+      <p>{{item.summary}}</p>
+      {% endif %}
+    </article>
+  </li>
+{% endfor %}
+</ul>

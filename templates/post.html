@@ -1,0 +1,21 @@
+
+{% extends "layout.html" %}
+
+{% block title %} - {{content.title}} - {% endblock %}
+
+{% block header %}
+  Whitepaper modified header
+{% endblock %}
+
+{% block content %}
+<article>
+<h1>{{content.title}}</h1>
+{% if content.subtitle %}
+<h2>{{content.subtitle}}</h2>
+{% endif %}
+<p>{{content.url}}</p>
+<section class="content-body">
+{{content.body}}
+</section>
+</article>
+{% endblock %}

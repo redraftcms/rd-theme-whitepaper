@@ -1,0 +1,23 @@
+
+{% extends "layout-index.html" %}
+{# #}
+{% block title %}{{content.title}} - {{super()}}{% endblock %}
+
+{% block header %}
+    <h1 class="title">
+      <a href="{{content.url}}">{{content.title}}</a>
+    </h1>
+    {% if content.subtitle %}
+    <h2 class="subtitle">{{content.subtitle}}</h2>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <article>
+      <section class="content-body">
+      {{content.body | safe}}
+      </section>
+    </article>
+{% endblock %}
+
+{% block foot %}{% endblock%}
