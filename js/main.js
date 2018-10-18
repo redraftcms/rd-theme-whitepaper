@@ -39,7 +39,7 @@ window.addEventListener("load", () => {
         return false
       }
     },
-    setPreference: (preference, value) {
+    setPreference: (preference, value) => {
       try {
         return localStorage.setItem(preference, value)
       }
