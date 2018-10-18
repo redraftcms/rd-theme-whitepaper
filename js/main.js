@@ -64,9 +64,18 @@ window.addEventListener("load", () => {
         title.innerHTML = titleUpdate.innerHTML;
         var bodyUpdate = html.querySelector("body");
         var body = document.body.innerHTML = bodyUpdate.innerHTML;
+
+        if (!state) {
+          state = {
+            title: document.title,
+            url: url
+          }
+          history.pushState(state, document.title, url)
+        }
         var event = document.createEvent("Event");
         event.initEvent("load");
         window.dispatchEvent(event);
+
       })
       .catch(err => Promise.reject(err))
     },
