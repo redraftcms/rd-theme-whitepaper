@@ -1,4 +1,7 @@
 window.addEventListener("load", () => {
+  const entryUrl = window.location.href;
+  const entryTitle = document.title;
+  history.pushState({title:entryTitle,url:entryUrl}, entryTitle, entryUrl)
   if (!window.fullyLoaded) {
     (function() {
       window.fullyLoaded = true;
