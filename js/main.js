@@ -1,5 +1,4 @@
 window.addEventListener("load", () => {
-
   if (!window.fullyLoaded) {
     (function() {
       window.fullyLoaded = true;
@@ -26,7 +25,7 @@ window.addEventListener("load", () => {
           dennis.loadPage(e.state.url, e.state)
         }
       };
-    })()
+    })();
   }
 
   let dennis = {
@@ -62,9 +61,11 @@ window.addEventListener("load", () => {
         var title = document.querySelector("title");
         var titleUpdate = html.querySelector("title");
         title.innerHTML = titleUpdate.innerHTML;
+        var canon = document.querySelector("link[rel=canonical]");
+        var canonUpdate = html.querySelector("link[rel=canonical]");
+        canon.href = canonUpdate.href;
         var bodyUpdate = html.querySelector("body");
-        var body = document.body.innerHTML = bodyUpdate.innerHTML;
-
+        document.body.innerHTML = bodyUpdate.innerHTML;
         if (!state) {
           state = {
             title: document.title,
@@ -75,7 +76,6 @@ window.addEventListener("load", () => {
         var event = document.createEvent("Event");
         event.initEvent("load");
         window.dispatchEvent(event);
-
       })
       .catch(err => Promise.reject(err))
     },
