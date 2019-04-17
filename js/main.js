@@ -1,33 +1,49 @@
 window.addEventListener("load", () => {
   const entryUrl = window.location.href;
   const entryTitle = document.title;
-  history.pushState({title:entryTitle,url:entryUrl}, entryTitle, entryUrl)
+
+  if (!window.history.state) {
+    window.history.replaceState({
+      title: entryTitle,
+      url: entryUrl
+    }, entryTitle, entryUrl)
+  }
+
   if (!window.fullyLoaded) {
     (function() {
       window.fullyLoaded = true;
-      console.log("X ONLOAD");
+      void 0;
       document.addEventListener("click", (e) => {
         let t = e.target;
         if (t.tagName==="A" && !t.href.hostname) {
           e.preventDefault();
           e.stopPropagation();
+          let previous = {
+            title: document.title,
+            url: t.href
+          }
           dennis.loadPage(t.href)
           .then((response) => {
-            console.log("Location changed to", t.href);
+            void 0;
+            void 0
           })
           .catch((error) => {
-            console.error(error);
+            void 0;
           })
         }
         else {
           return true;
         }
       });
-      window.onpopstate = function(e) {
+      window.addEventListener("popstate", function(e) {
+        void 0
         if (e && e.state && e.state.url) {
           dennis.loadPage(e.state.url, e.state)
         }
-      };
+      });
+      window.addEventListener("keyup", function(e) {
+        if (e.key === "Backspace") window.history.back()
+      })
     })();
   }
 
@@ -37,7 +53,7 @@ window.addEventListener("load", () => {
         return localStorage.getItem(preference)
       }
       catch(error) {
-        console.error(error)
+        void 0
         return false
       }
     },
@@ -46,12 +62,12 @@ window.addEventListener("load", () => {
         return localStorage.setItem(preference, value)
       }
       catch (error) {
-        console.error(error)
+        void 0
         return false
       }
     },
     loadPage: (url, state) => {
-      console.log("X LOADPAGE");
+      void 0;
       if (!url) return;
       return dennis.ajax("GET", url)
       .then(response => {
@@ -61,6 +77,7 @@ window.addEventListener("load", () => {
         }
         var html = document.createElement("html");
         html.innerHTML = response;
+        void 0
         var title = document.querySelector("title");
         var titleUpdate = html.querySelector("title");
         title.innerHTML = titleUpdate.innerHTML;
@@ -83,7 +100,7 @@ window.addEventListener("load", () => {
       .catch(err => Promise.reject(err))
     },
     ajax: (method, url) => {
-      console.log("X AJAX");
+      void 0;
       return new Promise((resolve, reject) => {
         var xhr = new XMLHttpRequest();
         xhr.addEventListener("load", function() {
