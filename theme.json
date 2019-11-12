@@ -1,8 +1,8 @@
 {
-  "name": "m-theme",
-  "title": "M Theme",
-  "description": "M theme.",
+  "name": "rd-theme-whitepaper",
+  "title": "Whitepaper",
+  "description": "Minimalist theme for Redraft.",
   "image": "screenshot.png",
-  "version": "1.0.15",
-  "repository": "git@bitbucket.org:latnblack/m-theme.git"
+  "version": "1.0.0",
+  "repository": "git@github.com:lnoir/rd-theme-whitepaper.git"
 }
