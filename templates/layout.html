@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="{{rd.site.description}}">
   <title>{% block title %}{{rd.site.name}}{% endblock %}</title>
-  <link rel="stylesheet" href="{{asset('css/main.css')}}">
+  {% assets ['css/main.css'] %}
+  <!-- Assets -->
+  {% endassets %}
+  <!-- <link rel="stylesheet" href="{{asset('css/main.css')}}"> -->
   <link rel="canonical" href="{{canonical()}}">
   {{ head() | safe }}
 </head>
@@ -48,6 +51,9 @@
 </footer>
 -->
 {{ foot() | safe }}
-<script src="{{asset('js/main.js')}}"></script>
+<!-- <script src="{{asset('js/main.js')}}"></script> -->
+{% assets ['js/main.js'] %}
+<!-- Assets -->
+{% endassets %}
 </body>
 </html>
