@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head data-gincb="{{gin.cacheBuster}}">
+<head data-rdcb="{{rd.cacheBuster}}">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="{{gin.site.description}}">
-  <title>{% block title %}{{gin.site.name}}{% endblock %}</title>
+  <meta name="description" content="{{rd.site.description}}">
+  <title>{% block title %}{{rd.site.name}}{% endblock %}</title>
   <link rel="stylesheet" href="{{asset('css/main.css')}}">
-  <link rel="stylesheet" href="{{asset('css/blank.css')}}">
   <link rel="canonical" href="{{canonical()}}">
   {{ head() | safe }}
 </head>
@@ -16,12 +15,12 @@
     <div class="container">
       <div class="columns">
         <div class="column is-10 is-offset-1 is-6-desktop is-offset-3-desktop">
-          <div class="site-name"><a href="/" title="IotaVille">IVI</a></div>
+          <div class="site-name"><a href="/" title="{{rd.site.name}}">{{rd.site.name}}</a></div>
           <div class="heading">
             {% block heading %}<em>Untitled</em>{% endblock %}
           </div>
           {% if navBack %}
-          <div class="gin-nav-back">
+          <div class="rd-nav-back">
             <a href="{{navBack}}">&larr; Back</a>
           </div>
           {% endif %}

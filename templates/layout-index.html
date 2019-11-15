@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head data-gincb="{{gin.cacheBuster}}">
+<head data-gincb="{{rd.cacheBuster}}">
   <meta charset="utf-8">
-  <title>{% block title %}{{gin.site.name}}{% endblock %}</title>
+  <title>{% block title %}{{rd.site.name}}{% endblock %}</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="{{gin.site.description}}">
+  <meta name="description" content="{{rd.site.description}}">
   <link rel="stylesheet" href="{{asset('css/main.css')}}">
-  <link rel="stylesheet" href="{{asset('css/blank.css')}}">
   <link rel="canonical" href="{{canonical()}}">
   {{ head() | safe }}
 </head>

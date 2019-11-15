@@ -1,21 +1,21 @@
 
 {% extends "layout.html" %}
 
-{% block title %}{{content.title}} - {{super()}}{% endblock %}
+{% block title %}{{title}} - {{super()}}{% endblock %}
 
 {% block heading %}
     <h1 class="title">
-      <a href="{{content.url}}">{{content.title}}</a>
+      <a href="{{url}}">{{title}}</a>
     </h1>
-    {% if content.subtitle %}
-    <h2 class="subtitle">{{content.subtitle}}</h2>
+    {% if subtitle %}
+    <h2 class="subtitle">{{subtitle}}</h2>
     {% endif %}
 {% endblock %}
 
 {% block content %}
     <article>
       <section class="content-body">
-      {{content.body | safe}}
+      {{body | safe}}
       </section>
     </article>
 {% endblock %}

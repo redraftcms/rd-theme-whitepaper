@@ -1,7 +1,7 @@
 
 {% extends "layout.html" %}
 
-{% block title %} - {{content.title}} - {% endblock %}
+{% block title %} - {{title}} - {% endblock %}
 
 {% block header %}
   Whitepaper modified header
@@ -9,13 +9,13 @@
 
 {% block content %}
 <article>
-<h1>{{content.title}}</h1>
-{% if content.subtitle %}
-<h2>{{content.subtitle}}</h2>
+<h1>{{title}}</h1>
+{% if subtitle %}
+<h2>{{subtitle}}</h2>
 {% endif %}
-<p>{{content.url}}</p>
+<p>{{url}}</p>
 <section class="content-body">
-{{content.body}}
+{{body}}
 </section>
 </article>
 {% endblock %}
