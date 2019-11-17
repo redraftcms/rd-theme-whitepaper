@@ -1,22 +1,21 @@
-
 {% extends "layout.html" %}
 
-{% block title %} - {{title}} - {% endblock %}
+{% block title %}{{title}} - {{super()}}{% endblock %}
 
-{% block header %}
-  Whitepaper modified header
+{% block heading %}
+    <h1 class="title">
+      <a href="{{url}}">{{title}}</a>
+    </h1>
+    {% if subtitle %}
+    <h2 class="subtitle">{{subtitle}}</h2>
+    {% endif %}
+    <p>{{created|formatDate}}</p>
 {% endblock %}
 
 {% block content %}
-<article>
-<h1>{{title}}</h1>
-{% if subtitle %}
-<h2>{{subtitle}}</h2>
-<p>{{created|formatDate}}
-{% endif %}
-<p>{{url}}</p>
-<section class="content-body">
-{{body}}
-</section>
-</article>
+    <article>
+      <section class="content-body">
+      {{body | safe}}
+      </section>
+    </article>
 {% endblock %}
